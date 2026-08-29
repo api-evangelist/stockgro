@@ -1,0 +1,59 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for the StockGro TradeView Intraday Model API
+  version: 1.0.0
+x-generated: '2026-08-29'
+x-method: generated
+x-source: openapi/stockgro-tradeview-intraday-model-openapi.json
+x-extends: openapi/stockgro-tradeview-intraday-model-openapi.json
+x-note: >-
+  Non-destructive. Records what API Evangelist observed and derived about this contract
+  without mutating the provider's original document. Every value below is either a probed
+  observation or a statement of an absence — nothing describes behavior the provider has
+  not published or that was not directly observed.
+actions:
+- target: $.info
+  update:
+    contact:
+      name: StockGro (Assetgro Fintech Private Limited)
+      url: https://www.stockgro.club/
+    x-provider: StockGro
+    x-provider-note: >-
+      The original document declares no servers, contact, or termsOfService. This overlay
+      attributes it to StockGro on the strength of the host it is served from and the
+      product semantics of its one business operation; see the ownership note in apis.yml.
+    x-surface-class: internal-service-publicly-reachable
+    x-developer-program: false
+- target: $
+  update:
+    servers:
+    - url: https://api.stockgro.club
+      description: >-
+        Production host, observed live. Added by overlay only — the original document
+        declares no servers block at all, so a client generated from it has no base URL.
+- target: $.paths['/'].get
+  update:
+    x-observed-response: '{"message":"Trade Processing API is running","environment":"prod"}'
+    x-observed-status: 200
+    x-auth-required: false
+- target: $.paths['/health'].get
+  update:
+    x-observed-response: '{"status":"healthy","environment":"prod","services":{"kafka":"healthy","clickhouse":"healthy"}}'
+    x-observed-status: 200
+    x-auth-required: false
+    x-dependencies:
+    - kafka
+    - clickhouse
+- target: $.paths['/process/trade/{post_id}'].post
+  update:
+    x-write-operation: true
+    x-idempotent: false
+    x-idempotency-note: >-
+      No Idempotency-Key header or equivalent is offered; a retry re-triggers processing.
+    x-reversible: unknown
+    x-reversibility-note: >-
+      No reversal operation exists in the contract and no reversal window is published.
+      Recorded as unknown rather than assigning one.
+    x-agent-guidance: >-
+      Write-shaped trigger with no replay protection and no documented undo. An agent
+      should not call this speculatively or as part of a retry loop.

@@ -1,0 +1,52 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json
+api: stockgro-tradeview-intraday-model-api
+format: fastapi-validation-error
+format_note: >-
+  Not RFC 9457. The API returns the stock FastAPI/Starlette error envelope with
+  content-type application/json, not application/problem+json. The 404 envelope observed
+  live is {"detail":"Not Found"}; the 422 envelope is the HTTPValidationError schema
+  declared in the spec.
+envelope:
+  field: detail
+  media_type: application/json
+  shape: >-
+    On validation failure `detail` is an array of ValidationError objects, each carrying
+    loc (array of string|integer path segments), msg (string) and type (string). On a
+    routing or generic error `detail` is a plain string.
+problem_types:
+- status: 422
+  title: Validation Error
+  schema: HTTPValidationError
+  operations:
+  - process_trade_process_trade__post_id__post
+  detail: >-
+    The request failed FastAPI request validation. Returned when post_id is absent or
+    cannot be coerced to a string.
+  remediation: >-
+    Read detail[].loc to find the offending parameter and detail[].msg for the reason;
+    correct the path parameter and retry.
+  source: declared in the OpenAPI responses for the operation
+- status: 404
+  title: Not Found
+  schema: null
+  operations: []
+  detail: 'Observed live as {"detail":"Not Found"} on any unrouted path.'
+  remediation: Check the path against the three routes the spec declares.
+  source: observed on a live anonymous probe, not declared in the spec
+- status: 401
+  title: Missing authorization token
+  schema: null
+  operations: []
+  detail: >-
+    Observed live on api.stockgro.club/api-docs, a path outside the published spec. Body
+    is text/plain, not JSON.
+  remediation: Not applicable to the documented operations, none of which require a token.
+  source: observed on a live anonymous probe, not declared in the spec
+coverage:
+  declared_error_responses: 1
+  operations_with_no_declared_error_response: 2
+  note: >-
+    root__get and health_check_health_get declare only a 200. No 5xx response is declared
+    anywhere in the contract.

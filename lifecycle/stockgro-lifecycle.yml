@@ -1,0 +1,49 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json + live probes
+api: stockgro-tradeview-intraday-model-api
+versioning:
+  scheme: info.version only
+  current_version: 1.0.0
+  in_path: false
+  in_header: false
+  note: >-
+    The spec carries info.version 1.0.0. No version appears in any path, header, or media
+    type, and no version-selection mechanism is documented.
+deprecation:
+  policy_published: false
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  rfc8594: false
+  deprecated_operations: []
+  note: >-
+    No operation carries deprecated: true. No deprecation or sunset policy is published
+    anywhere on StockGro's site — no StockGro `Deprecation` pointer is emitted.
+status_page:
+  published: false
+  url: null
+  evidence:
+  - url: https://status.stockgro.club/
+    status: 403
+    note: >-
+      Resolves, but returns a bare nginx "403 Forbidden" page — not a status page and not
+      a bot challenge. No StockGro `StatusPage` pointer is emitted.
+  health_endpoint:
+    url: https://api.stockgro.club/health
+    status: 200
+    note: >-
+      A machine-readable health endpoint exists and reported {"status":"healthy",
+      "environment":"prod","services":{"kafka":"healthy","clickhouse":"healthy"}}. This is
+      an unadvertised service endpoint, not a customer-facing status page.
+sla:
+  published: false
+  note: No service level agreement or uptime commitment is published.
+changelog:
+  published: false
+  note: >-
+    No dated changelog, release notes, or version history was found for the API or the
+    platform. No `ChangeLog` pointer is emitted.
+support:
+  url: https://www.stockgro.club/faq/
+  status: 200

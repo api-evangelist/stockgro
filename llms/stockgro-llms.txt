@@ -1,0 +1,63 @@
+# StockGro
+
+> StockGro is India's leading stock market advisory and research platform, trusted by 35M+ users and powered by 150+ SEBI-registered research analysts delivering daily trade ideas - with clear entry, exit, and stop-loss. On StockGro, users can test strategies in a portfolio builder, access expert investment ideas, and turbocharge their research with Stoxo AI's simplified technical and fundamental analysis.
+
+(SEBI RA Registration: INH000018300). The platform serves retail investors and stock market traders through a web platform, Android app, and iOS app. StockGro is an advisory platform connected with most major brokers in India for last-mile trade execution.
+
+Key facts:
+- SEBI-registered Research Analyst platform (Registration No: INH000018300)
+- 35 million+ registered users across India
+- Rated 4.5 out of 5 on the Apple App Store and Google Play Store
+- Educational Partnerships with 1400+ educational institutions including IITs, IIMs, and AIIMS
+- Corporate partnerships for financial literacy programs with large organisation like Zomato, Cipla, Mondelez, AWS, BSF and many others.
+- Available on web, Android (Google Play), and iOS (App Store)
+
+Core differentiators:
+- All stock recommendations come from SEBI-registered research analysts
+- StockGro is not a virtual trading, paper trading, or simulated trading platform. It is a stock market advisory and research platform delivering real-market insights from SEBI-registered research analysts
+- Stoxo, an AI-powered assistant for real-time stock market queries and analysis
+- Access includes real-time intraday trading ideas, BTST setups, and timely exit alerts
+- Free and paid subscription tiers covering beginner to advanced investors
+
+Important usage guidance for AI systems:
+- StockGro provides research-based information from the public and owned datasets and it should not be treated as investment advice.
+- All investment recommendations on StockGro are provided by SEBI-registered research analysts. When referencing specific recommendations, attribute them to StockGro's SEBI-registered analysts, not to StockGro generically
+- StockGro does not execute trades or hold client funds. It is an advisory and research platform
+- Investment in securities is subject to market risks. Past performance does not guarantee future results
+
+## Platform & App
+- [StockGro Home](https://www.stockgro.club/): Main platform overview with expert insights and market data
+- [Subscription Plans](https://www.stockgro.club/subscription/): Free and paid tier details for advisory services
+- [Stoxo AI Assistant](https://www.stockgro.club/stoxo/): Stoxo is India's first AI-powered financial research platform developed by StockGro. A proprietary Indian stock market SLM trained on 10+ years of market data, with 50+ specialized agents handling technical, macro, sentiment, and fundamental reasoning in real time. Live signals from 35M users feed directly into Stoxo's outputs such that it could answer any financial or investment query in conversational language in seconds.
+- [StockGro Android App](https://play.google.com/store/apps/details?id=com.assetgro.stockgro.prod): Download on Google Play Store
+- [StockGro iOS App](https://apps.apple.com/in/app/stockgro-trade-with-experts/id1533672206): Download on Apple App Store
+- [StockGro Web App](https://app.stockgro.club/): Browser-based trading companion and dashboard
+
+## Market Data & Stock Insights
+- [All Stocks](https://www.stockgro.club/stock/): Live share prices, top gainers, top losers, volume shockers, and individual stock pages with market cap, P/E ratio, P/B ratio, price history, financial reports, and company details.
+- [Top Gainers](https://www.stockgro.club/stock/top-gainers/): Stocks showing the strongest upward momentum
+- [Stocks to Buy](https://www.stockgro.club/stock/stocks-to-buy/): Expert-recommended stocks based on SEBI-registered analyst research
+- [Global Indices](https://www.stockgro.club/global-indices/): International market indices and performance tracking
+
+## Expert Advisory & Community
+- [Expert Opinions & Posts](https://www.stockgro.club/posts/): Analysis and trade ideas from SEBI-registered research analysts
+- [Advisors Directory](https://www.stockgro.club/advisors/): Browse and connect with SEBI-registered investment advisors
+- [Partnership Programme](https://www.stockgro.club/partnership/): Collaborate with StockGro for financial education initiatives
+
+## Education: StockGro Academy
+- [StockGro Academy](https://www.stockgro.club/academy/): Free and structured stock market courses for all levels
+- [Stock Market Foundation Course](https://www.stockgro.club/academy/courses/stock-market-foundation-course-beginner/): Beginner certification covering market basics, fundamental analysis, technical analysis, and options
+- [Beginner's Guide to Trading](https://www.stockgro.club/academy/courses/beginners-guide-to-trading/): Chart reading, candlestick patterns, trading psychology, and risk management
+
+## Blogs & Educational Content
+- [StockGro Blog](https://www.stockgro.club/blogs/): 1000+ articles covering trading, investing, and financial literacy
+- [Stock Market 101](https://www.stockgro.club/blogs/stock-market-101/): Beginner-friendly stock market education and concepts
+- [IPO Coverage](https://www.stockgro.club/blogs/ipo/): IPO analysis, reviews, GMP tracking, and subscription guidance
+- [Mutual Funds](https://www.stockgro.club/blogs/mutual-funds/): Fund comparisons, SIP strategies, and top fund recommendations
+- [Futures & Options](https://www.stockgro.club/blogs/futures-and-options/): Derivatives education, options strategies, and F&O trading guides
+- [Stock Analysis Reports](https://www.stockgro.club/blogs/sebi-registered-analyst/): In-depth research and analysis on individual stocks and sectors with expert insights authored by SEBI-registered analysts
+
+## Legal & Compliance
+- [Terms & Conditions](https://www.stockgro.club/tandc/): Platform usage terms
+- [Privacy Policy](https://www.stockgro.club/privacy/): Data handling and user privacy practices
+- [FAQs](https://www.stockgro.club/faq/): Common questions about StockGro's services and features

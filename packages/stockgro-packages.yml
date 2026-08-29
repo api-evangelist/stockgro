@@ -1,0 +1,37 @@
+generated: '2026-08-29'
+method: searched
+source: registry.npmjs.org, pypi.org, github.com/stockgro-india
+package_count: 0
+packages: []
+note: >-
+  StockGro publishes no client libraries. Searched npm (stockgro, @stockgro/sdk,
+  assetgro), PyPI (stockgro) and the company's own GitHub organization; all missed. No
+  `SDKs` pointer is emitted because no SDK exists. version and published are recorded
+  nowhere below because there is no package to read metadata for.
+registries_checked:
+- registry: npm
+  queries:
+  - package: stockgro
+    status: 404
+    version: null
+  - package: '@stockgro/sdk'
+    status: 404
+    version: null
+  - package: assetgro
+    status: 404
+    version: null
+- registry: pypi
+  queries:
+  - package: stockgro
+    status: 404
+    version: null
+source_code:
+  github_org: https://github.com/stockgro-india
+  org_name: StockGro Engineering
+  org_created: '2020-03-16'
+  public_repos: 0
+  note: >-
+    The GitHub organization is real, is named "StockGro Engineering", and lists
+    https://stockgro.club as its blog, but it publishes ZERO public repositories. It is an
+    identity surface, not a distribution surface — no SDK, sample, or spec is available
+    from it.

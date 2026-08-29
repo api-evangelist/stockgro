@@ -1,0 +1,27 @@
+generated: '2026-08-29'
+method: probed
+source: live anonymous GET of https://api.stockgro.club/health + search of https://www.stockgro.club/
+limit_count: 0
+rate_limits: []
+note: >-
+  StockGro publishes no rate limits. There is no developer documentation to state them,
+  and a live anonymous request to the API returned no rate-limit signaling of any kind.
+  An honest zero: limits may well be enforced upstream at Cloudflare, but nothing is
+  advertised to a caller.
+response_headers:
+  observed: []
+  x_ratelimit_family: false
+  ratelimit_family: false
+  retry_after: false
+  note: >-
+    The only non-standard headers on the live response were Cloudflare's own
+    (cf-cache-status, cf-ray, report-to, nel) plus strict-transport-security and
+    x-content-type-options. No X-RateLimit-*, RateLimit-*, or Retry-After header was
+    present.
+exhaustion_status_code: null
+exhaustion_note: >-
+  Not observed and not documented. The service sits behind Cloudflare, so a 429 or a
+  Cloudflare challenge page is plausible on abuse, but neither was triggered or confirmed.
+evidence:
+- url: https://api.stockgro.club/health
+  status: 200

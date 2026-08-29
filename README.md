@@ -64,5 +64,10 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-StockGro is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.nasdaqprivatemarket.com/
+StockGro is an Indian stock market advisory, research and financial-education platform operated by
+Assetgro Fintech Private Limited and headquartered in Bengaluru. It is registered with SEBI as a
+Research Analyst (INH000018300) and delivers daily trade ideas authored by SEBI-registered research
+analysts, alongside a portfolio builder, live market data, an advisors directory, StockGro Academy,
+and the Stoxo AI research assistant.
+
+- https://www.stockgro.club/

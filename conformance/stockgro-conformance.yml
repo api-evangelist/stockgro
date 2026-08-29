@@ -1,0 +1,83 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.stockgro.club/ + https://www.stockgro.club/llms.txt + openapi/stockgro-tradeview-intraday-model-openapi.json
+summary: >-
+  StockGro's only published conformance claim is a regulatory one: it is registered with
+  the Securities and Exchange Board of India as a Research Analyst, and prints the
+  registration number on its own homepage and in its llms.txt. No cross-cutting API
+  standard is asserted anywhere in the contract or the docs.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: 'No securitySchemes of type oauth2 in the OpenAPI; no OAuth documentation published.'
+- id: oidc
+  conforms: false
+  evidence: '/.well-known/openid-configuration returned 404 on api.stockgro.club and www.stockgro.club.'
+- id: rfc9457
+  conforms: false
+  evidence: >-
+    Errors are returned as application/json with a `detail` field (FastAPI default), not
+    application/problem+json.
+- id: idempotency
+  conforms: false
+  evidence: >-
+    No Idempotency-Key header, parameter, or documentation anywhere in the spec or on the
+    site.
+- id: pagination
+  conforms: false
+  evidence: 'No collection-returning operation exists in the contract; pagination is not applicable.'
+- id: json:api
+  conforms: false
+  evidence: 'Responses are plain JSON objects; no JSON:API media type or document structure.'
+- id: odata
+  conforms: false
+  evidence: 'No $metadata surface; no OData query options in the spec.'
+- id: scim
+  conforms: false
+  evidence: 'No SCIM schema URNs; the API exposes no identity or provisioning surface.'
+- id: fapi
+  conforms: false
+  evidence: >-
+    No FAPI profile claim. StockGro is an advisory and research platform that does not
+    execute trades or hold client funds, so it operates no account or payment-initiation
+    surface for a financial-grade profile to apply to.
+domain_standards:
+- id: sebi-research-analyst
+  name: SEBI Research Analyst Regulations (India)
+  conforms: true
+  registration: INH000018300
+  evidence: >-
+    "SEBI RA Reg : INH000018300" is printed on https://www.stockgro.club/ and repeated in
+    https://www.stockgro.club/llms.txt as "SEBI RA Registration: INH000018300". This is a
+    regulatory registration published by the provider, not a machine-readable contract
+    signature.
+  machine_readable: false
+- id: fdx
+  conforms: false
+  evidence: 'No FDX endpoints or data structures; StockGro holds no customer accounts to share.'
+- id: fix-protocol
+  conforms: false
+  evidence: >-
+    No FIX session, message type, or tag vocabulary appears in the contract. StockGro
+    routes execution to third-party brokers rather than to an exchange, so no order-entry
+    protocol surface is published.
+domain_standard_signature:
+  found: false
+  note: >-
+    The contract declares no domain-standard signature of any kind. Its only business
+    operation scores an internal StockGro trade post by id and uses no market-data or
+    securities-messaging vocabulary. The SEBI registration above is a published regulatory
+    fact, not a contract-declared standard, and is recorded as such rather than being
+    counted as a machine-readable domain-standard conformance.
+compliance_program:
+  published: true
+  certifications: []
+  regulatory_registrations:
+  - authority: Securities and Exchange Board of India (SEBI)
+    category: Research Analyst
+    number: INH000018300
+    source: https://www.stockgro.club/
+  note: >-
+    No SOC 2, ISO 27001, PCI DSS, or other security certification is published. The
+    published compliance posture is the SEBI Research Analyst registration only. A trust
+    center probe found none.

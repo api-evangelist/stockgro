@@ -1,0 +1,53 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json
+api: stockgro-tradeview-intraday-model-api
+summary: >-
+  The contract exposes NO domain entities. Both declared component schemas are error
+  envelopes; every successful response is an untyped open object
+  (additionalProperties). The trade post the service operates on is referenced only by an
+  opaque string id in the path and is never described as a schema, so the entity graph
+  below is genuinely empty rather than merely unmapped.
+entities: []
+entity_count: 0
+error_schemas:
+- name: HTTPValidationError
+  fields:
+  - name: detail
+    type: array
+    items: ValidationError
+- name: ValidationError
+  fields:
+  - name: loc
+    type: array
+    items: string|integer
+    required: true
+  - name: msg
+    type: string
+    required: true
+  - name: type
+    type: string
+    required: true
+relationships:
+- from: HTTPValidationError
+  to: ValidationError
+  kind: has_many
+  via: detail
+  source: '$ref in components.schemas.HTTPValidationError.properties.detail.items'
+id_references:
+- field: post_id
+  in: path
+  operation: process_trade_process_trade__post_id__post
+  type: string
+  refers_to: StockGro trade post
+  note: >-
+    The referent is an internal StockGro entity. Its shape, id format, and prefix are not
+    described in the contract or in any public documentation, so no schema is recorded for
+    it.
+untyped_responses:
+- operation: root__get
+  note: 'object with additionalProperties: string'
+- operation: health_check_health_get
+  note: 'object with additionalProperties: true'
+- operation: process_trade_process_trade__post_id__post
+  note: 'object with additionalProperties: true'

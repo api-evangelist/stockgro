@@ -1,18 +1,76 @@
 aid: stockgro
 name: StockGro
-description: 'StockGro is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'StockGro is an Indian stock market advisory, research and financial-education
+  platform operated by Assetgro Fintech Private Limited and headquartered in Bengaluru.
+  It is registered with SEBI as a Research Analyst (INH000018300) and delivers daily
+  trade ideas with entry, exit and stop-loss levels authored by SEBI-registered research
+  analysts, alongside a portfolio builder, live market data and stock pages, an advisors
+  directory, and StockGro Academy courses used by 1,400+ educational institutions.
+  Its AI assistant, Stoxo, answers market and research questions in conversational
+  language. StockGro is an advisory and research platform connected to major Indian
+  brokers for last-mile execution; it does not execute trades or hold client funds.
+  StockGro publishes no public developer program: the company serves a substantive
+  llms.txt for AI agents, and one internal FastAPI scoring service is publicly
+  reachable at api.stockgro.club, but there is no documented API, portal, or SDK.'
+image: https://www.stockgro.club/favicon.ico
 url: https://raw.githubusercontent.com/api-evangelist/stockgro/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
-apis: []
+- Financial Services
+- Stock Market
+- Investing
+- Market Data
+- Financial Education
+- Fintech
+- India
+- Advisory
+- Social Investing
+apis:
+- aid: stockgro-tradeview-intraday-model-api
+  name: TradeView Intraday Model API
+  description: 'Real-time scoring service for intraday trade predictions, published
+    as an auto-generated FastAPI OpenAPI 3.1.0 document served without authentication
+    at api.stockgro.club/openapi.json. Three operations: a root banner, a health check
+    reporting Kafka and ClickHouse service state, and a trigger that processes a
+    StockGro trade post by id. This is an internal platform service that happens to
+    be publicly reachable, not a documented developer API — StockGro publishes no
+    developer portal, reference, keys, or terms of use for it.'
+  humanURL: https://api.stockgro.club/docs
+  baseURL: https://api.stockgro.club
+  tags:
+  - Trading
+  - Market Data
+  - Scoring
+  x-spec-provenance: >-
+    STEP 0c ownership check. The spec declares no servers, no info.contact and no
+    info.termsOfService, so no signal in it names ANY company. It is attributed to
+    StockGro because it is served from api.stockgro.club — StockGro's own production API
+    host, whose root returns "Trade Processing API is running" and whose /health reports
+    StockGro production Kafka and ClickHouse services — and because its only business
+    operation scores a StockGro trade post by id, which matches StockGro's SEBI-analyst
+    trade-idea product and matches no other product. No conflicting owner signal was
+    found. Recorded explicitly because the fetch host is the weakest evidence available
+    here and it is doing more work than usual.
+  properties:
+  - type: OpenAPI
+    url: openapi/stockgro-tradeview-intraday-model-openapi.json
+  - type: Documentation
+    url: https://api.stockgro.club/docs
+  - type: APIReference
+    url: https://api.stockgro.club/redoc
+  - type: Overlay
+    url: overlays/stockgro-tradeview-intraday-model-overlay.yaml
+  - type: ErrorCatalog
+    url: errors/stockgro-problem-types.yml
+  - type: DataModel
+    url: data-model/stockgro-data-model.yml
+  - type: Authentication
+    url: authentication/stockgro-authentication.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +78,41 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.stockgro.club/
+- type: Blog
+  url: https://www.stockgro.club/blogs/
+- type: Support
+  url: https://www.stockgro.club/faq/
+- type: TermsOfService
+  url: https://www.stockgro.club/tandc/
+- type: PrivacyPolicy
+  url: https://www.stockgro.club/privacy/
+- type: SignUp
+  url: https://app.stockgro.club/
+- type: Pricing
+  url: https://www.stockgro.club/subscription/
+- type: GitHubOrganization
+  url: https://github.com/stockgro-india
+- type: LLMsTxt
+  url: llms/stockgro-llms.txt
+- type: Conformance
+  url: conformance/stockgro-conformance.yml
+- type: Compliance
+  url: conformance/stockgro-conformance.yml
+- type: Lifecycle
+  url: lifecycle/stockgro-lifecycle.yml
+- type: Conventions
+  url: conventions/stockgro-conventions.yml
+- type: DomainSecurity
+  url: security/stockgro-domain-security.yml
+- type: Plans
+  url: plans/stockgro-plans-pricing.yml
+- type: RateLimits
+  url: rate-limits/stockgro-rate-limits.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-08-29'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1

@@ -1,0 +1,22 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.stockgro.club/subscription/
+plan_count: 0
+plans: []
+note: >-
+  StockGro sells consumer subscriptions, not API plans, and no API pricing exists at all.
+  The subscription page returns HTTP 200 but renders its tiers client-side: the served
+  HTML is ~399KB of Next.js payload whose extractable text is only the heading "Subscribe
+  to StockGro - Invest Smarter with Experts", and a currency scan of the served markup
+  found no price strings. The plan names, prices, and billing periods are therefore not
+  machine-readable from the public page and were not captured. plan_count is 0 because
+  nothing was read, not because StockGro charges nothing — recording a guessed tier would
+  be fabrication.
+api_pricing:
+  published: false
+  note: >-
+    No pricing, metering, quota, or commercial terms are published for
+    api.stockgro.club. It is an internal service with no developer program attached.
+evidence:
+- url: https://www.stockgro.club/subscription/
+  status: 200

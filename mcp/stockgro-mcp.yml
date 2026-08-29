@@ -1,0 +1,67 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json
+status: candidate
+summary: >-
+  StockGro ships NO MCP server. Searched for a hosted server and probed
+  https://api.stockgro.club/mcp (404) and https://mcp.stockgro.club/ (does not resolve);
+  no npm or PyPI package exists. The tools below are a DERIVED candidate mapping of the
+  three published OpenAPI operations, offered as a design starting point. They are not
+  callable and no MCP endpoint exists — no `MCPServer` pointer is emitted in apis.yml,
+  because emitting one would assert an agent surface StockGro does not serve.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: none
+  verified: derived
+probes:
+- url: https://api.stockgro.club/mcp
+  method: POST tools/list
+  status: 404
+  body: '{"detail":"Not Found"}'
+- url: https://mcp.stockgro.club/
+  status: '<no response>'
+  note: hostname does not resolve
+tools:
+- name: get_service_root
+  description: Return the service banner and the environment the API is running in.
+  rest: root__get
+  method: get
+  path: /
+  input_schema:
+    type: object
+    properties: {}
+    required: []
+  status: candidate
+- name: check_health
+  description: >-
+    Return service health, including the state of the Kafka and ClickHouse dependencies.
+  rest: health_check_health_get
+  method: get
+  path: /health
+  input_schema:
+    type: object
+    properties: {}
+    required: []
+  status: candidate
+- name: process_trade_post
+  description: >-
+    Trigger processing of a StockGro trade post by id and return its processing status.
+    Write-shaped and, per conventions/stockgro-conventions.yml, has no documented reversal
+    and no idempotency protection — an agent should not call it speculatively.
+  rest: process_trade_process_trade__post_id__post
+  method: post
+  path: /process/trade/{post_id}
+  input_schema:
+    type: object
+    properties:
+      post_id:
+        type: string
+        title: Post Id
+        description: Post ID to process
+    required:
+    - post_id
+  status: candidate
+tool_count: 3

@@ -1,0 +1,39 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json + live probes of api.stockgro.club
+api: stockgro-tradeview-intraday-model-api
+summary: >-
+  The published OpenAPI declares NO components.securitySchemes and applies no security
+  requirement to any of its three operations. All three documented operations answered
+  anonymously on a live probe, so the documented surface is effectively unauthenticated.
+  StockGro publishes no developer authentication documentation, no API keys, and no
+  OAuth surface — this is an internal platform service, not a keyed developer API.
+schemes: []
+scheme_count: 0
+applied_globally: false
+observed:
+- path: /
+  method: get
+  anonymous_status: 200
+  note: returned {"message":"Trade Processing API is running","environment":"prod"}
+- path: /health
+  method: get
+  anonymous_status: 200
+  note: returned service health for kafka and clickhouse
+- path: /api-docs
+  method: get
+  anonymous_status: 401
+  note: >-
+    Not an operation in the published spec. A sibling path on the same host answered
+    401 "Missing authorization token", showing SOME token-based gate exists elsewhere on
+    api.stockgro.club; its scheme is not documented anywhere public and was not probed
+    further.
+oauth2: false
+openid_connect: false
+mutual_tls: false
+api_keys: false
+docs: null
+docs_note: >-
+  No public authentication documentation exists. api.stockgro.club/docs and /redoc are
+  the FastAPI-generated Swagger UI and ReDoc renderings of the same spec and contain no
+  auth guidance.

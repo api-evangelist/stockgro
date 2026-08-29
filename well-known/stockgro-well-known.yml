@@ -1,0 +1,89 @@
+generated: '2026-08-29'
+method: probed
+source: live GET of /.well-known/* on every StockGro host
+note: >-
+  Every /.well-known/ path probed returned a miss on all three StockGro hosts, so NO
+  WellKnown or SecurityTxt pointer is emitted in apis.yml — this file records an
+  absence, not a presence. On api.stockgro.club the FastAPI service answers a clean
+  JSON 404. On www.stockgro.club the Next.js site answers HTTP 404 with an HTML error
+  page. app.stockgro.club is a single-page-app catch-all that answers HTTP 200 with the
+  same HTML application shell for EVERY path, including /openapi.json and
+  /.well-known/agent-card.json; those 200s are recorded here as misses, not documents,
+  because the body is the SPA shell and carries no well-known document.
+hosts:
+- host: api.stockgro.club
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: www.stockgro.club
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 404
+    file: null
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: app.stockgro.club
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/ai-plugin.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/agent-card.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss
+  - path: /.well-known/agent.json
+    status: 200
+    file: null
+    note: SPA catch-all returned the HTML application shell, not a document — counted as a miss

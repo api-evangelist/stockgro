@@ -1,0 +1,22 @@
+generated: '2026-08-29'
+method: generated
+source: openapi/stockgro-tradeview-intraday-model-openapi.json
+api: stockgro-tradeview-intraday-model-api
+note: >-
+  Authored by API Evangelist, not published by StockGro. StockGro ships no agent skills and
+  no AGENTS.md; a search of its site and its (empty) GitHub organization found none. Every
+  operationId referenced below was verified against the provider's own OpenAPI document.
+skill_count: 2
+skills:
+- name: stockgro-check-service-health
+  file: stockgro-check-service-health.md
+  description: Confirm the service and its Kafka/ClickHouse dependencies are healthy before calling anything else.
+  operations:
+  - root__get
+  - health_check_health_get
+- name: stockgro-process-trade-post
+  file: stockgro-process-trade-post.md
+  description: Trigger scoring of one trade post by id, with the safety checks the contract does not enforce.
+  operations:
+  - health_check_health_get
+  - process_trade_process_trade__post_id__post

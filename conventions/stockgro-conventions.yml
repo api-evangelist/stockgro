@@ -1,0 +1,80 @@
+generated: '2026-08-29'
+method: derived
+source: openapi/stockgro-tradeview-intraday-model-openapi.json + live probes of api.stockgro.club
+api: stockgro-tradeview-intraday-model-api
+summary: >-
+  A three-operation FastAPI service with no published developer conventions. Everything
+  below is derived from the contract and from live anonymous responses; StockGro publishes
+  no API style guide, no conventions documentation, and no developer portal.
+authentication:
+  style: none-declared
+  detail: See authentication/stockgro-authentication.yml — no securitySchemes are declared or applied.
+idempotency:
+  supported: false
+  header: null
+  scope: null
+  retention: null
+  evidence: >-
+    No Idempotency-Key (or equivalent) header, parameter, or documentation exists in the
+    contract or anywhere on StockGro's site. The one write-shaped operation,
+    process_trade_process_trade__post_id__post, offers no replay protection. No
+    `Idempotency` pointer is emitted.
+pagination:
+  supported: false
+  style: null
+  evidence: No operation returns a collection, so there is no pagination surface.
+field_expansion:
+  supported: false
+  evidence: No expand/fields/include parameters appear in the contract.
+metadata:
+  supported: false
+  evidence: No metadata object appears in any schema.
+request_id_tracing:
+  supported: false
+  evidence: >-
+    No X-Request-Id or correlation header is documented, and none was observed on live
+    anonymous responses. Only Cloudflare's own cf-ray was present.
+versioning:
+  style: info.version only
+  detail: See lifecycle/stockgro-lifecycle.yml.
+error_envelope:
+  media_type: application/json
+  field: detail
+  rfc9457: false
+  detail: See errors/stockgro-problem-types.yml.
+rate_limit_signaling:
+  headers_observed: []
+  documented: false
+  evidence: >-
+    A live anonymous GET of https://api.stockgro.club/health returned no X-RateLimit-*,
+    RateLimit-*, or Retry-After header. See rate-limits/stockgro-rate-limits.yml.
+dry_run_mode:
+  supported: false
+  grade: undocumented
+  evidence: No dry-run, preview, simulate, or validate-only mode is offered on any operation.
+reversibility:
+  grade: undocumented
+  applicable: true
+  applicable_note: >-
+    The API is not read-only. POST /process/trade/{post_id} is a write-shaped trigger that
+    causes StockGro to process a trade post, so reversibility genuinely applies and is not
+    `na`.
+  write_surfaces:
+  - operation_id: process_trade_process_trade__post_id__post
+    method: post
+    path: /process/trade/{post_id}
+    effect: >-
+      Manually triggers processing of a trade post. The spec's own description says it
+      dispatches FastAPI background_tasks and returns a processing status; it does not say
+      what the processing writes or whether re-triggering the same post_id is safe.
+    reversal_operation: null
+    reversal_window: null
+    docs: null
+    evidence: >-
+      No cancel, undo, revert, void, or delete counterpart exists in the contract, and
+      StockGro publishes no documentation stating whether processing can be reversed or
+      within what window. Recorded as undocumented rather than assigning a window — no
+      published source states one.
+  read_surfaces:
+  - operation_id: root__get
+  - operation_id: health_check_health_get
