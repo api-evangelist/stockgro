@@ -54,36 +54,61 @@ tags_raw:
 - Advisory
 - Social Investing
 apis:
-- aid: stockgro:stockgro-tradeview-intraday-model-api
-  name: TradeView Intraday Model API
-  description: 'Real-time scoring service for intraday trade predictions, published as an auto-generated
-    FastAPI OpenAPI 3.1.0 document served without authentication at api.stockgro.club/openapi.json. Three
-    operations: a root banner, a health check reporting Kafka and ClickHouse service state, and a trigger
-    that processes a StockGro trade post by id. This is an internal platform service that happens to be
-    publicly reachable, not a documented developer API — StockGro publishes no developer portal, reference,
-    keys, or terms of use for it.'
+- aid: stockgro:stockgro-health-api
+  name: StockGro Health API
+  description: The Health API from StockGro — 1 operation(s) for health.
   humanURL: https://api.stockgro.club/docs
   baseURL: https://api.stockgro.club
   tags:
-  - Trading
-  - Market Data
-  - Scoring
-  x-spec-provenance: STEP 0c ownership check. The spec declares no servers, no info.contact and no info.termsOfService,
-    so no signal in it names ANY company. It is attributed to StockGro because it is served from api.stockgro.club
-    — StockGro's own production API host, whose root returns "Trade Processing API is running" and whose
-    /health reports StockGro production Kafka and ClickHouse services — and because its only business
-    operation scores a StockGro trade post by id, which matches StockGro's SEBI-analyst trade-idea product
-    and matches no other product. No conflicting owner signal was found. Recorded explicitly because the
-    fetch host is the weakest evidence available here and it is doing more work than usual.
+  - Health
   properties:
   - type: OpenAPI
-    url: openapi/stockgro-tradeview-intraday-model-openapi.json
+    url: openapi/stockgro-health-api-openapi.yml
   - type: Documentation
     url: https://api.stockgro.club/docs
   - type: APIReference
     url: https://api.stockgro.club/redoc
-  - type: Overlay
-    url: overlays/stockgro-tradeview-intraday-model-overlay.yaml
+  - type: ErrorCatalog
+    url: errors/stockgro-problem-types.yml
+  - type: DataModel
+    url: data-model/stockgro-data-model.yml
+  - type: Authentication
+    url: authentication/stockgro-authentication.yml
+- aid: stockgro:stockgro-process-api
+  name: StockGro Process API
+  description: The Process API from StockGro — 1 operation(s) for process.
+  humanURL: https://api.stockgro.club/docs
+  baseURL: https://api.stockgro.club
+  tags:
+  - Process
+  properties:
+  - type: OpenAPI
+    url: openapi/stockgro-process-api-openapi.yml
+  - type: Documentation
+    url: https://api.stockgro.club/docs
+  - type: APIReference
+    url: https://api.stockgro.club/redoc
+  - type: ErrorCatalog
+    url: errors/stockgro-problem-types.yml
+  - type: DataModel
+    url: data-model/stockgro-data-model.yml
+  - type: Authentication
+    url: authentication/stockgro-authentication.yml
+- aid: stockgro:stockgro-tradeview-intraday-model-api-api
+  name: StockGro TradeView Intraday Model API
+  description: >-
+    The TradeView Intraday Model API API from StockGro — 1 operation(s) for tradeview intraday model api.
+  humanURL: https://api.stockgro.club/docs
+  baseURL: https://api.stockgro.club
+  tags:
+  - TradeView Intraday Model API
+  properties:
+  - type: OpenAPI
+    url: openapi/stockgro-tradeview-intraday-model-api-api-openapi.yml
+  - type: Documentation
+    url: https://api.stockgro.club/docs
+  - type: APIReference
+    url: https://api.stockgro.club/redoc
   - type: ErrorCatalog
     url: errors/stockgro-problem-types.yml
   - type: DataModel
@@ -96,6 +121,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Overlay
+  url: overlays/stockgro-tradeview-intraday-model-overlay.yaml
 - type: Website
   url: https://www.stockgro.club/
 - type: Blog
