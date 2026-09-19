@@ -80,6 +80,8 @@ apis:
   humanURL: https://api.stockgro.club/docs
   baseURL: https://api.stockgro.club
   tags:
+  - Processes
+  tags_raw:
   - Process
   properties:
   - type: OpenAPI
