@@ -1,0 +1,24 @@
+openapi: 3.2.0
+info:
+  title: TradeView Intraday Model Health API
+  description: Real-time scoring service for intraday trade predictions
+  version: 1.0.0
+tags:
+- name: Health
+paths:
+  /health:
+    get:
+      summary: Health Check
+      description: Health check endpoint.
+      operationId: health_check_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                additionalProperties: true
+                type: object
+                title: Response Health Check Health Get
+      tags:
+      - Health

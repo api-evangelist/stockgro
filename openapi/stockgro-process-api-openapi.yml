@@ -1,0 +1,81 @@
+openapi: 3.2.0
+info:
+  title: TradeView Intraday Model Process API
+  description: Real-time scoring service for intraday trade predictions
+  version: 1.0.0
+tags:
+- name: Process
+paths:
+  /process/trade/{post_id}:
+    post:
+      summary: Process Trade
+      description: 'Manually trigger processing of a trade post.
+
+
+        Args:
+
+        post_id: Post ID to process
+
+        background_tasks: FastAPI background tasks
+
+
+        Returns:
+
+        Processing status'
+      operationId: process_trade_process_trade__post_id__post
+      parameters:
+      - name: post_id
+        in: path
+        required: true
+        schema:
+          type: string
+          title: Post Id
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: true
+                title: Response Process Trade Process Trade  Post Id  Post
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+      tags:
+      - Process
+components:
+  schemas:
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError

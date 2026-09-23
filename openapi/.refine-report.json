@@ -1,0 +1,30 @@
+{
+  "provider": "stockgro",
+  "sources": [
+    "_original/stockgro-tradeview-intraday-model-openapi.json"
+  ],
+  "outputs": [
+    "stockgro-health-api-openapi.yml",
+    "stockgro-process-api-openapi.yml",
+    "stockgro-tradeview-intraday-model-api-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "stockgro-tradeview-intraday-model-openapi.json: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "stockgro-tradeview-intraday-model-openapi.json: tagged paths GET / -> TradeView Intraday Model API",
+    "stockgro-tradeview-intraday-model-openapi.json: tagged paths GET /health -> Health",
+    "stockgro-tradeview-intraday-model-openapi.json: tagged paths POST /process/trade/{post_id} -> Process",
+    "stockgro-tradeview-intraday-model-openapi.json: declared missing tag: Health",
+    "stockgro-tradeview-intraday-model-openapi.json: declared missing tag: Process",
+    "stockgro-tradeview-intraday-model-openapi.json: declared missing tag: TradeView Intraday Model API",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "stockgro-health-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stockgro-process-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "stockgro-tradeview-intraday-model-api-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
+}
