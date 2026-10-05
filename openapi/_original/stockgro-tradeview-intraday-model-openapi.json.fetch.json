@@ -1,0 +1,12 @@
+{
+ "url": "https://api.stockgro.club/openapi.json",
+ "requested_url": "https://api.stockgro.club/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 2023,
+ "sha256": "aff200499be5580c9849737a8f1c4cd4e40448b5feaa3faf3d2fdad01bdf8e09",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "byte-identical",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the archived file is byte-identical to what the provider serves."
+}
