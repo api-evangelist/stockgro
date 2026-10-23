@@ -23,3 +23,9 @@ paths:
                 title: Response Root  Get
       tags:
       - TradeView Intraday Model API
+x-provenance:
+  method: harvested
+  publisher: StockGro
+  source: https://api.stockgro.club/openapi.json
+  note: split by refine-openapis from the provider's own published document, verified by fetch (openapi/_original/*.fetch.json);
+    stamped by stamp-openapi-provenance.py (roadmap#793)
