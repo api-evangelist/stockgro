@@ -64,10 +64,117 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-StockGro is an Indian stock market advisory, research and financial-education platform operated by
-Assetgro Fintech Private Limited and headquartered in Bengaluru. It is registered with SEBI as a
-Research Analyst (INH000018300) and delivers daily trade ideas authored by SEBI-registered research
-analysts, alongside a portfolio builder, live market data, an advisors directory, StockGro Academy,
-and the Stoxo AI research assistant.
+StockGro is an Indian stock market advisory, research and financial-education platform operated by Assetgro Fintech Private Limited and headquartered in Bengaluru. It is registered with SEBI as a Research Analyst (INH000018300) and delivers daily trade ideas with entry, exit and stop-loss levels authored by SEBI-registered research analysts, alongside a portfolio builder, live market data and stock pages, an advisors directory, and StockGro Academy courses used by 1,400+ educational institutions. Its AI assistant, Stoxo, answers market and research questions in conversational language. StockGro is an advisory and research platform connected to major Indian brokers for last-mile execution; it does not execute trades or hold client funds. StockGro publishes no public developer program: the company serves a substantive llms.txt for AI agents, and one internal FastAPI scoring service is publicly reachable at api.stockgro.club, but there is no documented API, portal, or SDK.
 
-- https://www.stockgro.club/
+**Areas:** Company · Financial Services · Stock Market · Investing · Market Data · Financial Education · Fintech · India · Advisory · Social Investing
+
+## StockGro on APIs.io
+
+Everything profiled for StockGro is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/stockgro/](https://apis.io/providers/stockgro/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [StockGro Health API](https://apis.io/apis/stockgro/stockgro-health-api/) — The Health API from StockGro — 1 operation(s) for health.
+- [StockGro Process API](https://apis.io/apis/stockgro/stockgro-process-api/) — The Process API from StockGro — 1 operation(s) for process.
+- [StockGro TradeView Intraday Model API](https://apis.io/apis/stockgro/stockgro-tradeview-intraday-model-api-api/) — The TradeView Intraday Model API API from StockGro — 1 operation(s) for tradeview intraday model api.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [stockgro-mcp.yml](https://apis.io/servers/stockgro/stockgro-mcp-yml/)
+
+#### Overlays (1)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Stockgro Tradeview Intraday Model Overlay](https://apis.io/overlays/stockgro/stockgro-tradeview-intraday-model-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Stockgro Authentication](https://apis.io/security/stockgro/stockgro-authentication/)
+- [Stockgro Domain Security](https://apis.io/security/stockgro/stockgro-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Stockgro Plans Pricing](https://apis.io/plans/stockgro/stockgro-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Stockgro Rate Limits](https://apis.io/rate-limits/stockgro/stockgro-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.stockgro.club/)
+- [Pricing](https://www.stockgro.club/subscription/)
+- [Sign up](https://app.stockgro.club/)
+- [Support](https://www.stockgro.club/faq/)
+- [Blog](https://www.stockgro.club/blogs/)
+- [Terms of service](https://www.stockgro.club/tandc/)
+- [Privacy policy](https://www.stockgro.club/privacy/)
+- [GitHub](https://github.com/stockgro-india)
+
+## API Evangelist rating
+
+**Kin Score 33.8** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 38.2 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 37.5 |
+| Access clarity | 39.5 |
+
+**Agent readiness 19.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 33.3** — Securities & Market Data
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/stockgro/](https://apis.io/providers/stockgro/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for StockGro: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/stockgro/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
